@@ -18,7 +18,7 @@ This repository contains Linux OS programming fundamentals. Also it contains how
          - tar -xjvf linux-source-3.13.0.tar.bz2
        - enter linux source folder  cd linux-source-3.13.0
        
-   ### Write Your System Call 
+   ### Write Your System Call 
        - You can find the step by step project explanation in [THIS](SystemCall/STEP_BY_STEP_REPORT.pdf) report. 
     
    ### Compile and Install New Kernel 
@@ -34,11 +34,11 @@ This repository contains Linux OS programming fundamentals. Also it contains how
          - sudo reboot( You can find the new kernel from advanced options )
        - Now you can test it.
       
-   ### Uninstall Compiled Kernel
+   ### Uninstall Compiled Kernel
        - sudo dpkg -r linux-image-3.13...custom
        - sudo dpkg -r linux-headers-3.13...custom
   
-## FUSE Development
+## FUSE Development
    ### ----------------- INFORMATION -----------------------
    - ** This is a Website Read Only File System for users.
    - ** Simply it does not allows write operations in it.
