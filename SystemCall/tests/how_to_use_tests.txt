@@ -1,0 +1,25 @@
+Error Checking 
+
+1- Compile : gcc test3.c -o testError
+2- Eperm Testing : ./testError <niceVal> <flag>
+3- Esrch Testing: sudo ./testError <niceVal> <flag>
+3.1 - Follow the guides on the test code please
+4- Einval Testing : sudo ./testError <niceVal> <flag>
+4.1 - Flag must be given not 1 or 0
+
+Fork Checking
+
+1-Compile: gcc test3.c -o forkTesting
+2-Normally fork : sudo ./forkTesting <11> <0>
+3-No child process created (echild) : sudo ./forkTesting <11> <1>
+
+Exit Checking 
+
+1-Compile: gcc exit_test2.c -o exitTest
+2-Compile: gcc flag_setter.c -o controlExit
+3-Run: ./exitTest
+4-Normally Exit: sudo ./controlExit <0> <childpid>
+5-Kill Siblings : sudo ./controlExit <1> <childpid>
+
+
+

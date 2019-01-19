@@ -1,0 +1,67 @@
+------------------------------------------------------kernel/fork.c-----------------------------------------------------------------
+< #include <linux/errno.h>
+---
+> 
+1289,1290c1289
+< 	
+< 	p->myFlag = 0;	//set myFlag 0 to give childs a default flag parameter
+---
+> 
+1650,1655c1649
+< 	
+< 	struct task_struct *controller = current;
+< 	if(controller->myFlag == 1 && task_nice(controller)>10)
+< 	{
+< 		return ECHILD; //returns error no child processes
+< 	}
+---
+> 
+1696a1691
+>
+------------------------------------------------------kernel/exit.c-----------------------------------------------------------------
+709,719d708
+< 	if(current->myFlag == 1 && task_nice(current)>10)
+< 	{
+< 		struct list_head *sibs_of_me;
+< 		struct task_struct *sib;
+< 		list_for_each(sibs_of_me, &current->parent->children)
+< 		{
+< 			sib = list_entry(sibs_of_me,struct task_struct, sibling);
+< 			sys_kill(sib->pid,SIGKILL);
+< 		}
+< 	}
+< 
+-------------------------------------arch/x86/boot/compressed/head_32.S-----------------------------------------
+230d229
+< #ifdef CONFIG_EFI_STUB
+237d235
+< #endif
+---------------------------------------arch/x86/syscalls/syscall_32.tbl----------------------------------------------------
+364d363
+< 355	i386	set_myFlag		sys_set_myFlag
+--------------------------------------------include/linux/init_task.h----------------------------------------------------------
+218d217
+< 	.myFlag = 0,
+
+-----------------------------------------------include/linux/sched.h--------------------------------------------------------------
+1468,1469d1467
+< 
+< int myFlag;
+
+----------------------------------------------include/linux/syscalls.h------------------------------------------------------------
+852d851
+< asmlinkage long sys_set_myFlag(pid_t pid, int flag);
+
+------------------------------------------------------Makefile----------------------------------------------------------------
+540c540
+< core-y		:= usr/	set_myFlag/
+---
+> core-y		:= usr/
+
+--------------------------------------------------Linux Source Folder-------------------------------------------------
+>	/set_myFlag/
+
+
+
+
+
