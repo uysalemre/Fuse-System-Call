@@ -40,29 +40,29 @@ This repository contains Linux OS programming fundamentals. Also it contains how
   
 ## FUSE Development
    ### ----------------- INFORMATION -----------------------
-   - ** This is a Website Read Only File System for users.
-   - ** Simply it does not allows write operations in it.
-   - ** Main purpose is giving tidied HTML files to users.
-   - ** In read operation code creates tidied output of HTML.
+   -  This is a Website Read Only File System for users.
+   -  Simply it does not allows write operations in it.
+   -  Main purpose is giving tidied HTML files to users.
+   -  In read operation code creates tidied output of HTML.
    ### ----------------- REQUIREMENTS ----------------------
-   - ** First we need to install libtidy 
-   - ** git clone git@github.com:htacg/tidy-html5.git
-   - ** cd {your-tidy-html5-directory}/build/cmake
-   - ** cmake ../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-   - ** make
-   - ** sudo make install
+   -  First we need to install libtidy 
+   -  git clone git@github.com:htacg/tidy-html5.git
+   -  cd {your-tidy-html5-directory}/build/cmake
+   -  cmake ../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+   -  make
+   -  sudo make install
    ### -------------------- USAGE---------------------------
-   - ** Create a directory ( for example  Website ) 
-   - ** In Website directory create html directory 
-   - ** The other directories in website does not make sense.
-   - ** Move your .html files into html directory
-   - ** Go to out of your website.  
-   - ** Create a directory named test
-   - ** Create a configuration file config.txt to make configuration
-   - ** For a true configuration change the config_file_path to your code directory
-   - ** Then compile using : gcc -I/usr/include/tidy myFuseSystem.c -o myFuse -Wall -ansi -W -std=c99 -g -ggdb -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -lfuse -ltidy
-   - ** Execute : ./myFuse -d website test
-   - ** Open another terminal and go to test/html directory
-   - ** Read the Html files using cat try.html 
-   - ** Output is tidied.
-   - You can find all explanations and requirements in [THIS](FUSE/fuseSystem.pdf) report. 
+   -  Create a directory ( for example  Website ) 
+   -  In Website directory create html directory 
+   -  The other directories in website does not make sense.
+   -  Move your .html files into html directory
+   -  Go to out of your website.  
+   -  Create a directory named test
+   -  Create a configuration file config.txt to make configuration
+   -  For a true configuration change the config_file_path to your code directory
+   -  Then compile using : gcc -I/usr/include/tidy myFuseSystem.c -o myFuse -Wall -ansi -W -std=c99 -g -ggdb -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -lfuse -ltidy
+   -  Execute : ./myFuse -d website test
+   -  Open another terminal and go to test/html directory
+   -  Read the Html files using cat try.html 
+   -  Output is tidied.
+   -  You can find all explanations and requirements in [THIS](FUSE/fuseSystem.pdf) report. 
