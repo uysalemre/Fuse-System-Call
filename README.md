@@ -1,5 +1,7 @@
 # System-Programming
 This repository contains Linux OS programming fundamentals. Also it contains how to implement System Call  and FUSE on Linux.
+  - In System Call fork() and exit() system calls are modified.
+  - In FUSE a read-only directory created which tidies HTML files of a website using Libtidy.
 
 ## System Call Development
    ### Requirements For System Call Project 
