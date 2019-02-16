@@ -21,7 +21,7 @@ This repository contains Linux OS programming fundamentals. Also it contains how
        - enter linux source folder  cd linux-source-3.13.0
        
    ### Write Your System Call 
-       - You can find the step by step project explanation in [THIS](SystemCall/STEP_BY_STEP_REPORT.pdf) report. 
+       - You can find the step by step project explanation in SystemCall/STEP_BY_STEP_REPORT.pdf report. 
     
    ### Compile and Install New Kernel 
        - Use make defconfig command to generate kernel configuration 
