@@ -1,10 +1,10 @@
-# System-Programming
-This repository contains Linux OS programming fundamentals. Also it contains how to implement System Call  and FUSE on Linux.
-  - In System Call fork() and exit() system calls are modified.
+#                                       System-Programming
+This repository contains System Call and FUSE implementations on Linux.
+  - In System Call fork() and exit() system calls are modified for managing processes.
   - In FUSE a read-only directory created which tidies HTML files of a website using Libtidy.
-
-## System Call Development
-   ### Requirements For System Call Project 
+ 
+##                                    System Call Development
+   ###            Requirements For System Call Project 
        - Install Virtual Box (highly recommended in system call development process because of safety)
        - Download Lubuntu 14.04.5 LTS from http://cdimage.ubuntu.com/lubuntu/releases/14.04.5/release/
        - create your virtual machine and DON'T UPDATE it.
@@ -12,7 +12,7 @@ This repository contains Linux OS programming fundamentals. Also it contains how
          - sudo apt-get update
          - sudo apt-get install manpages-dev g++ patch strace ltrace linux-headers-$(uname -r) linux-source kernel-package fakeroot libncurses5-dev libfuse-dev
          
-   ### Adding a System Call
+   ###                  Adding a System Call
        - move linux source archive file to desktop
          - cd Desktop
          - sudo mv /usr/src/linux-source-3.13.0/linux-source- 3.13.0.tar.bz2 linux-source-3.13.0.tar.bz2
@@ -20,10 +20,10 @@ This repository contains Linux OS programming fundamentals. Also it contains how
          - tar -xjvf linux-source-3.13.0.tar.bz2
        - enter linux source folder  cd linux-source-3.13.0
        
-   ### Write Your System Call 
+   ###                  Write Your System Call 
        - You can find the step by step project explanation in SystemCall/STEP_BY_STEP_REPORT.pdf report. 
     
-   ### Compile and Install New Kernel 
+   ###              Compile and Install New Kernel 
        - Use make defconfig command to generate kernel configuration 
        - make-kpkg cleans the previous kernel compilations
        - Compile Command (It may take 30 minutes) : 
@@ -36,24 +36,27 @@ This repository contains Linux OS programming fundamentals. Also it contains how
          - sudo reboot( You can find the new kernel from advanced options )
        - Now you can test it.
       
-   ### Uninstall Compiled Kernel
+   ###                Uninstall Compiled Kernel
        - sudo dpkg -r linux-image-3.13...custom
        - sudo dpkg -r linux-headers-3.13...custom
   
-## FUSE Development
-   ### ----------------- INFORMATION -----------------------
+##                    FUSE Development
+
+   ###                  INFORMATION 
    -  This is a Website Read Only File System for users.
    -  Simply it does not allows write operations in it.
    -  Main purpose is giving tidied HTML files to users.
    -  In read operation code creates tidied output of HTML.
-   ### ----------------- REQUIREMENTS ----------------------
+   
+   ###                  REQUIREMENTS 
    -  First we need to install libtidy 
    -  git clone git@github.com:htacg/tidy-html5.git
    -  cd {your-tidy-html5-directory}/build/cmake
    -  cmake ../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
    -  make
    -  sudo make install
-   ### -------------------- USAGE---------------------------
+   
+   ###                    USAGE
    -  Create a directory ( for example  Website ) 
    -  In Website directory create html directory 
    -  The other directories in website does not make sense.
